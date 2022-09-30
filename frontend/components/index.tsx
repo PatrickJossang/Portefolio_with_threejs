@@ -5,7 +5,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { loadGLTFModel } from '../lib/model';
 import { BodyModel, Container, Footer, Header } from './styles';
 
-const LitterWitch: React.FC = () => {
+const ThreePc: React.FC = () => {
   const refBody = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [renderer, setRenderer] = useState<any>();
@@ -47,8 +47,8 @@ const LitterWitch: React.FC = () => {
       container.appendChild(renderer.domElement);
       setRenderer(renderer);
 
-      const scale = scH * 0.08 + 4;
-      const camera = new THREE.OrthographicCamera(-scale, scale, scale, -scale / 2, 0.01, 50000);
+      const scale = scH * 0.0001 + 3;
+      const camera = new THREE.OrthographicCamera(-scale, scale, scale, -scale / 1, 0.1, 50);
       camera.position.copy(initialCameraPosition);
       camera.lookAt(target);
       setCamera(camera);
@@ -57,7 +57,7 @@ const LitterWitch: React.FC = () => {
       scene.add(ambientLight);
 
       const controls = new OrbitControls(camera, renderer.domElement);
-      controls.autoRotate = true;
+      controls.autoRotate = false;
       controls.target = target;
       setControls(controls);
 
@@ -110,15 +110,15 @@ const LitterWitch: React.FC = () => {
     <Container>
       <Header>
         <h1>
-          🎃 <span>HAPPY HALLOWEEN 2021</span> 🎃
+          
         </h1>
       </Header>
       <BodyModel ref={refBody}>{loading && <p>loading...</p>}</BodyModel>
       <Footer>
-        -- Created by <a href='https://github.com/sonvt-fe'>Saul Vo</a> ❤️ --
+      
       </Footer>
     </Container>
   );
 };
 
-export default LitterWitch;
+export default ThreePc;
