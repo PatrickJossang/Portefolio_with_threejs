@@ -1,5 +1,6 @@
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-
+// if all goes wrong it backs up to this 
+//TODO create a backup sulution function 
 export function loadGLTFModel(
   scene,
   glbPath,

@@ -2,14 +2,17 @@ import React from "react";
 import ToggleTheme from "../components/ToggleTheme";
 import { ThemeProvider } from "../context/ThemeContext";
 
+//TODO give all objects and text a dark theme 
 function NavBar() {
   return (
     <div>
+      border
       <div className="flex flex-row justify-between w-15 bg-white border-r">
         <div>
           <div className="inline-flex items-right justify-left w-16 h-16">
             <span className="block w-10 h-10 bg-gray-200 rounded-lg"></span>
           </div>
+          Toggle between light mode and dark mode 
           <ToggleTheme />
           <div className="border-t border-gray-100">
             <nav className="flex flex-col p-2">

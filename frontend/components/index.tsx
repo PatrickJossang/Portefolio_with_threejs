@@ -1,10 +1,12 @@
 import React from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
+//import for threejs
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { loadGLTFModel } from '../lib/model';
 import { BodyModel, Container, Footer, Header } from './styles';
 
+// giving varibals new values
 const ThreePc: React.FC = () => {
   const refBody = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -31,6 +33,7 @@ const ThreePc: React.FC = () => {
     return Math.sqrt(1 - Math.pow(x - 1, 4));
   };
 
+  //data container to render on cliend side  
   useEffect(() => {
     const { current: container } = refBody;
     if (container && !renderer) {
@@ -41,26 +44,33 @@ const ThreePc: React.FC = () => {
         antialias: true,
         alpha: true,
       });
+      //Stolen code but its for fast rendering and unpacking containers on client side 
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(scW, scH);
       renderer.outputEncoding = THREE.sRGBEncoding;
       container.appendChild(renderer.domElement);
       setRenderer(renderer);
 
+      //where camera is located to the model and model size 
+      //TODO fix camera location after view is changed to perspectiv 
       const scale = scH * 0.0001 + 3;
       const camera = new THREE.OrthographicCamera(-scale, scale, scale, -scale / 1, 0.1, 50);
       camera.position.copy(initialCameraPosition);
       camera.lookAt(target);
       setCamera(camera);
 
+        //Lightning to make the model viseball 
       const ambientLight = new THREE.AmbientLight(0xcccccc, 1);
       scene.add(ambientLight);
-
+      //What kind of controls i have inn the web 
+        //TODO Change camera view to perspektiv after model is done 
       const controls = new OrbitControls(camera, renderer.domElement);
       controls.autoRotate = false;
       controls.target = target;
       setControls(controls);
 
+        //My model loader
+        //TODO When publish to web applicasjon change path 
       loadGLTFModel(scene, '../model/90sPc.glb', {
         receiveShadow: false,
         castShadow: false,
@@ -68,7 +78,7 @@ const ThreePc: React.FC = () => {
         animate();
         setLoading(false);
       });
-
+      //to make turnin look natrual
       let req: any = null;
       let frame = 0;
       const animate = () => {
@@ -81,6 +91,8 @@ const ThreePc: React.FC = () => {
           const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 20;
 
           camera.position.y = 10;
+          //spinning
+          //TODO remove after model is done 
           camera.position.x = p.x * Math.cos(rotSpeed) + p.z * Math.sin(rotSpeed);
           camera.position.z = p.z * Math.cos(rotSpeed) - p.x * Math.sin(rotSpeed);
           camera.lookAt(target);
@@ -106,6 +118,7 @@ const ThreePc: React.FC = () => {
     };
   }, [renderer, handleWindowResize]);
 
+    //Make it visual in web 
   return (
     <Container>
       <Header>

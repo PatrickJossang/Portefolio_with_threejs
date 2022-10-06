@@ -3,6 +3,9 @@ import { ThemeContext } from "../context/ThemeContext";
 const ToggleTheme = () => {
   const { theme, setTheme } = React.useContext(ThemeContext);
 
+
+  //DarkMode theme 
+  //Mostly just a moon and a sun to indecate what you are on 
   return (
     <div>
       {theme === "dark" ? (
