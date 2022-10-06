@@ -40,8 +40,8 @@ export const ThemeProvider = ({ initialTheme, children }) => {
   React.useEffect(() => {
     checkTheme(theme);
   }, [theme]);
-//create visual representation 
-//TODO wrap it over the current parents 
+  //create visual representation 
+  //TODO wrap it over the current parents 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}

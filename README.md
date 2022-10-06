@@ -6,5 +6,7 @@ npm install next
 npm install react 
 npm install django 
 npm install three
+- typescript
+- @types/node
 
 to run frontend: npm run dev 

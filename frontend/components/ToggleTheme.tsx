@@ -33,7 +33,7 @@ const ToggleTheme = () => {
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           className="text-gray-400 shadow-none p-2 text-4xl cursor-pointer hover:text-purple-500"
         >
-        
+
           <svg
             className="w-6 h-6"
             fill="none"

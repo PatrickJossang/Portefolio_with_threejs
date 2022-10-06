@@ -59,23 +59,24 @@ const ThreePc: React.FC = () => {
       camera.lookAt(target);
       setCamera(camera);
 
-        //Lightning to make the model viseball 
-      const ambientLight = new THREE.AmbientLight(0xcccccc, 1);
-      scene.add(ambientLight);
+      //Lightning to make the model viseball 
+      const directionalLight = new THREE.DirectionalLight( 0xffffff, 0.9 );
+      scene.add( directionalLight );
       //What kind of controls i have inn the web 
-        //TODO Change camera view to perspektiv after model is done 
+      //TODO Change camera view to perspektiv after model is done 
       const controls = new OrbitControls(camera, renderer.domElement);
       controls.autoRotate = false;
       controls.target = target;
       setControls(controls);
 
-        //My model loader
-        //TODO When publish to web applicasjon change path 
-      loadGLTFModel(scene, '../model/90sPc.glb', {
-        receiveShadow: false,
-        castShadow: false,
+      //My model loader
+      //TODO When publish to web applicasjon change path 
+      loadGLTFModel(scene, '../model/90sPc.gltf', {
+        receiveShadow: true,
+        castShadow: true,
       }).then(() => {
         animate();
+        //DO NOT SETT TO TRUE !!!!!
         setLoading(false);
       });
       //to make turnin look natrual
@@ -118,17 +119,17 @@ const ThreePc: React.FC = () => {
     };
   }, [renderer, handleWindowResize]);
 
-    //Make it visual in web 
+  //Make it visual in web 
   return (
     <Container>
       <Header>
         <h1>
-          
+
         </h1>
       </Header>
       <BodyModel ref={refBody}>{loading && <p>loading...</p>}</BodyModel>
       <Footer>
-      
+
       </Footer>
     </Container>
   );
