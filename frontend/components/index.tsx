@@ -19,6 +19,7 @@ const ThreePc: React.FC = () => {
   const [scene] = useState(new THREE.Scene());
   const [_controls, setControls] = useState<any>();
 
+    // If the user resizes the window, the camera and renderer are updated.
   const handleWindowResize = useCallback(() => {
     const { current: container } = refBody;
     if (container && renderer) {
@@ -44,7 +45,7 @@ const ThreePc: React.FC = () => {
         antialias: true,
         alpha: true,
       });
-      //Stolen code but its for fast rendering and unpacking containers on client side 
+      //Fast rendering and unpacking containers on client side 
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(scW, scH);
       renderer.outputEncoding = THREE.sRGBEncoding;
@@ -54,14 +55,18 @@ const ThreePc: React.FC = () => {
       //where camera is located to the model and model size 
       //TODO fix camera location after view is changed to perspectiv 
       const scale = scH * 0.0001 + 3;
-      const camera = new THREE.OrthographicCamera(-scale, scale, scale, -scale / 1, 0.1, 50);
+      const camera = new THREE.OrthographicCamera( scale / - 2, scale / 2, scale / 2, scale / - 2, 1, 1000 );
       camera.position.copy(initialCameraPosition);
       camera.lookAt(target);
       setCamera(camera);
 
       //Lightning to make the model viseball 
-      const directionalLight = new THREE.DirectionalLight( 0xffffff, 0.9 );
+      //white lights
+      const directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
       scene.add( directionalLight );
+      //yellow amber light 
+      const directionalsLight = new THREE.DirectionalLight( 0xfebe00, 0.2 );
+      scene.add( directionalsLight );
       //What kind of controls i have inn the web 
       //TODO Change camera view to perspektiv after model is done 
       const controls = new OrbitControls(camera, renderer.domElement);
@@ -72,8 +77,8 @@ const ThreePc: React.FC = () => {
       //My model loader
       //TODO When publish to web applicasjon change path 
       loadGLTFModel(scene, '../models/90sPc.gltf', {
-        receiveShadow: true,
-        castShadow: true,
+        receiveShadow: false,
+        castShadow: false,
       }).then(() => {
         animate();
         //DO NOT SETT TO TRUE !!!!!
@@ -90,12 +95,9 @@ const ThreePc: React.FC = () => {
         if (frame <= 100) {
           const p = initialCameraPosition;
           const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 20;
-
+          //posision of camera
           camera.position.y = 10;
           //spinning
-          //TODO remove after model is done 
-          camera.position.x = p.x * Math.cos(rotSpeed) + p.z * Math.sin(rotSpeed);
-          camera.position.z = p.z * Math.cos(rotSpeed) - p.x * Math.sin(rotSpeed);
           camera.lookAt(target);
         } else {
           controls.update();
@@ -103,7 +105,7 @@ const ThreePc: React.FC = () => {
 
         renderer.render(scene, camera);
       };
-
+      //help to stopp rendering when not in use
       return () => {
         console.log('unmount');
         cancelAnimationFrame(req);
