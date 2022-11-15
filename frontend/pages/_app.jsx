@@ -5,18 +5,12 @@ import NavBar from "../components/NavBar";
 // the overlay on all pages 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className="min-h-screen flex flex-col">
-      <div className="flex flex-col md:flex-row flex-1">
+      <div className="flex">
         <ThemeProvider>
-          <aside className="w-full md:w-auto">
-            <NavBar />
-          </aside>
-          <main className="flex-1">
-            <Component {...pageProps}></Component>
-          </main>
+            <NavBar className="flex-1 "/>
+            <Component {...pageProps} className="flex-1 grow"></Component>
         </ThemeProvider>
       </div>
-    </div>
   );
 }
 
