@@ -1,9 +1,9 @@
 import React from 'react'
 
-function work() {
+function Prosjects() {
   return (
     <div>hello work!</div>
   )
 }
 
-export default work
+export default Prosjects

@@ -3,9 +3,9 @@ import React from 'react'
 function dir() {
   return (
     <div>
-      <div className="bg-gray-900 text-white container w-full">
+      <div className="bg-gray-900 text-white w-full ">
         <div
-          className=" w-full container py-32 lg:flex lg:h-screen lg:items-center grow"
+          className=" w-full container py-32 lg:flex lg:h-screen lg:items-center "
         >
           <div className=" text-center container ">
             <h1
@@ -20,7 +20,7 @@ function dir() {
               hello my name is Patrick i made this website. fair warning there are still bugs but should work for normal activety.
             </p>
 
-            <div className="mt-8 flex container flex-wrap justify-center gap-4 ">
+            <div className="mt-8 flex container justify-center gap-4 ">
               <a
                 className="block container w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
                 href="/2D"
