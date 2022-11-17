@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import Image from 'next/image';
-import Modal from "../components/Modal";
+import Modal from "../../components/Modal";
 
 function about() {
     const [showModal, setShowModal] = useState(false);
@@ -28,7 +28,7 @@ function about() {
                                             Jeg sikter for en god og effektiv løsning for deg og din bedrift.
                                             Jeg har erfaring med ulike bransjer,
                                             det inkluderer
-                                            <span onClick={() => setShowModal(true)} className="underline decoration-violet-800 underline-offset-1">camping,</span>
+                                            <button onClick={() => setShowModal(true)} className="underline decoration-violet-800 underline-offset-1 ">camping,</button>
                                             <span onClick={() => setShowModal2(true)} className="underline decoration-violet-800 underline-offset-1">buttikk,</span>
                                             <span onClick={() => setShowModal3(true)} className="underline decoration-violet-800 underline-offset-1">gård</span>
                                             og
