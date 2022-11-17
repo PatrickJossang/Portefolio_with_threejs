@@ -1,45 +1,23 @@
+import Link from 'next/link'
 import React from 'react'
 
 function dir() {
   return (
-    <div>
-      <div className="bg-gray-900 text-white container w-full">
-        <div
-          className=" w-full container py-32 lg:flex lg:h-screen lg:items-center grow"
-        >
-          <div className=" text-center container ">
-            <h1
-              className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent container w-full sm:text-5xl"
-            >
-              Portifolio who extends expectations to 3D and 2D.
-
-              <span className="sm:block container w-full "> Only optimized for PC. </span>
-            </h1>
-
-            <p className=" mt-8 container w-full sm:text-xl sm:leading-relaxed ">
-              hello my name is Patrick i made this website. fair warning there are still bugs but should work for normal activety.
-            </p>
-
-            <div className="mt-8 flex container flex-wrap justify-center gap-4 ">
-              <a
-                className="block container w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
-                href="/2D"
-              >
-                2D
-              </a>
-
-              <a
-                className="block container w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
-                href="/3D"
-              >
-                3D
-              </a>
-            </div>
-          </div>
-        </div>
+    <section className="bg-violet-300 text-gray-100">
+    <div className="container mx-auto flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 xl:max-w-3xl">
+      <h1 className="text-4xl font-bold leading-none sm:text-5xl">Hei, jeg heter <span className="text-violet-700">Patrick </span>
+      <span className="mt-4 text-4xl sm:text-5">Jeg er en frontend utvikler som elsker å utforske.</span></h1>
+      <p className="px-8 mt-8 mb-12 text-lg">Jeg har prøvd å lage en portefolio i 2d og 3d uheldigvis er 3d kun optimalisert for <span className="underline decoration-violet-800 underline-offset-1">Pc</span>  uten <span className="underline decoration-violet-800 underline-offset-1">ultrawide</span>! </p>
+      <div className="flex flex-wrap justify-center">
+        <Link href="/3D">
+        <button className="px-8 py-3 m-2 text-lg font-semibold rounded text-white bg-violet-800 hover:bg-transparent hover:shadow-inner hover:text-violet-800 hover:subpixel-antialiased hover:shadow-violet-800 hover:border border border-violet-800"> 3D </button>
+        </Link>
+        <Link href="/2D">
+        <button className="px-8 py-3 m-2 text-lg font-semibold rounded text-white bg-violet-800 hover:bg-transparent hover:shadow-inner hover:text-violet-800 hover:subpixel-antialiased hover:shadow-violet-800 hover:border border border-violet-800"> 2D </button>
+        </Link>
       </div>
-
     </div>
+  </section>
   )
 }
 

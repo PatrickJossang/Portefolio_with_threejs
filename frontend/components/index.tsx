@@ -76,9 +76,9 @@ const ThreePc: React.FC = () => {
 
       //My model loader
       //TODO When publish to web applicasjon change path 
-      loadGLTFModel(scene, '../models/90sPc.gltf', {
-        receiveShadow: false,
-        castShadow: false,
+      loadGLTFModel(scene, '../model/90sPc.gltf', {
+        receiveShadow: true,
+        castShadow: true,
       }).then(() => {
         animate();
         //DO NOT SETT TO TRUE !!!!!
