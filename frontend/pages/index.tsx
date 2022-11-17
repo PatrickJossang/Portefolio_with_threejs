@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-function dir() {
+function LandingPage() {
   return (
     <section className="bg-violet-300 text-gray-100">
     <div className="container mx-auto flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 xl:max-w-3xl">
@@ -21,4 +21,4 @@ function dir() {
   )
 }
 
-export default dir
+export default LandingPage
