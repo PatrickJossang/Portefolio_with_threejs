@@ -3,89 +3,68 @@ import Link from 'next/link'
 function Projects() {
   return (
     <div>
-      <section className="my-8 bg-white text-black">
-    <div className="container flex flex-col items-center mx-auto mb-12 md:p-10 md:px-12">
-      <h1 className="p-4 text-4xl font-bold leading-none text-center ">Prosjekter jeg har hatt </h1>
-    </div>
-    <div className="container flex flex-col items-center justify-center mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly lg:px-10">
-      <div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
-        <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 bg-gray-900">
-          <p className="relative px-6 py-1 text-lg italic text-center text-gray-100">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 text-violet-400">
-              <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
-              <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
-            </svg>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus quibusdam, eligendi exercitationem molestias possimus facere.
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="absolute right-0 w-8 h-8 text-violet-400">
-              <path d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
-              <path d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
-            </svg>
-          </p>
-        </div>
-        <div className="flex flex-col items-center justify-center p-8 rounded-b-lg bg-violet-400 text-gray-900">
-          <img src="https://source.unsplash.com/50x50/?portrait?1" alt="" className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full bg-gray-500 bg-gray-700" />
-          <p className="text-xl font-semibold leading-tight">Distinctio Animi</p>
-          <p className="text-sm uppercase">Aliquam illum</p>
-        </div>
-      </div>
-      <div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
-        <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 bg-gray-900">
-          <p className="relative px-6 py-1 text-lg italic text-center text-gray-100">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 text-violet-400">
-              <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
-              <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
-            </svg>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus quibusdam, eligendi exercitationem molestias possimus facere.
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="absolute right-0 w-8 h-8 text-violet-400">
-              <path d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
-              <path d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
-            </svg>
-          </p>
-        </div>
-        <div className="flex flex-col items-center justify-center p-8 rounded-b-lg bg-violet-400 text-gray-900">
-          <img src="https://source.unsplash.com/50x50/?portrait?2" alt="" className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full bg-gray-500 bg-gray-700" />
-          <p className="text-xl font-semibold leading-tight">Distinctio Animi</p>
-          <p className="text-sm uppercase">Aliquam illum</p>
-        </div>
-      </div>
-      <div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
-        <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 bg-gray-900">
-          <p className="relative px-6 py-1 text-lg italic text-center text-gray-100">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 text-violet-400">
-              <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
-              <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
-            </svg>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus quibusdam, eligendi exercitationem molestias possimus facere.
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="absolute right-0 w-8 h-8 text-violet-400">
-              <path d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
-              <path d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
-            </svg>
-          </p>
-        </div>
-        <div className="flex flex-col items-center justify-center p-8 rounded-b-lg bg-violet-400 text-gray-900">
-          <img src="https://source.unsplash.com/50x50/?portrait?3" alt="" className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full bg-gray-500 bg-gray-700" />
-          <p className="text-xl font-semibold leading-tight">Distinctio Animi</p>
-          <p className="text-sm uppercase">Aliquam illum</p>
-        </div>
-      </div>
-      <div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
-        <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 bg-gray-900">
-          <p className="relative px-6 py-1 text-lg italic text-center text-gray-100">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 text-violet-400">
-              <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
-              <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
-            </svg>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus quibusdam, eligendi exercitationem molestias possimus facere.
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="absolute right-0 w-8 h-8 text-violet-400">
-              <path d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
-              <path d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
-            </svg>
-          </p>
-        </div>
-        <div className="flex flex-col items-center justify-center p-8 rounded-b-lg bg-violet-400 text-gray-900">
-          <img src="https://source.unsplash.com/50x50/?portrait?4" alt="" className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full bg-gray-500 bg-gray-700" />
-          <p className="text-xl font-semibold leading-tight">Distinctio Animi</p>
-          <p className="text-sm uppercase">Aliquam illum</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<section className="bg-gray-800 text-gray-100">
+	<div className="container flex flex-col mx-auto lg:flex-row">
+		<div className="w-full lg:w-1/3 bg-center bg-cover"><img src="https://source.unsplash.com/640x480/?1" alt="" className="h-80 bg-gray-500 aspect-video" /></div>
+		<div className="flex flex-col w-full p-6 lg:w-2/3 md:p-8 lg:p-12">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-8 h-8 mb-8 text-violet-400">
+				<path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+			</svg>
+			<h2 className="text-3xl font-semibold leading-none">Modern solutions to all kinds of problems</h2>
+			<p className="mt-4 mb-8 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non voluptatum rem amet!</p>
+			<button className="self-start px-10 py-3 text-lg font-medium rounded-3xl bg-violet-400 text-gray-900">Get started</button>
+		</div>
+	</div>
+</section>
+<section className="p-4 lg:p-8 bg-gray-800 text-gray-100">
+	<div className="container mx-auto space-y-12">
+		<div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
+			<img src="https://source.unsplash.com/640x480/?1" alt="" className="h-80 bg-gray-500 aspect-video" />
+			<div className="flex flex-col justify-center flex-1 p-6 bg-gray-900">
+				<span className="text-xs uppercase text-gray-400">Join, it's free</span>
+				<h3 className="text-3xl font-bold">We're not reinventing the wheel</h3>
+				<p className="my-6 text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aliquam possimus quas, error esse quos.</p>
+				<button type="button" className="self-start">Action</button>
+			</div>
+		</div>
+		<div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row-reverse">
+			<img src="https://source.unsplash.com/640x480/?2" alt="" className="h-80 bg-gray-500 aspect-video" />
+			<div className="flex flex-col justify-center flex-1 p-6 bg-gray-900">
+				<span className="text-xs uppercase text-gray-400">Join, it's free</span>
+				<h3 className="text-3xl font-bold">We're not reinventing the wheel</h3>
+				<p className="my-6 text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aliquam possimus quas, error esse quos.</p>
+				<button type="button" className="self-start">Action</button>
+			</div>
+		</div>
+		<div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
+			<img src="https://source.unsplash.com/640x480/?3" alt="" className="h-80 bg-gray-500 aspect-video" />
+			<div className="flex flex-col justify-center flex-1 p-6 bg-gray-900">
+				<span className="text-xs uppercase text-gray-400">Join, it's free</span>
+				<h3 className="text-3xl font-bold">We're not reinventing the wheel</h3>
+				<p className="my-6 text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aliquam possimus quas, error esse quos.</p>
+				<button type="button" className="self-start">Action</button>
+			</div>
+		</div>
+		<div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row-reverse">
+			<img src="https://source.unsplash.com/640x480/?2" alt="" className="h-80 bg-gray-500 aspect-video" />
+			<div className="flex flex-col justify-center flex-1 p-6 bg-gray-900">
+				<span className="text-xs uppercase text-gray-400">Join, it's free</span>
+				<h3 className="text-3xl font-bold">We're not reinventing the wheel</h3>
+				<p className="my-6 text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aliquam possimus quas, error esse quos.</p>
+				<button type="button" className="self-start">Action</button>
+			</div>
+		</div>
+		<div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
+			<img src="https://source.unsplash.com/640x480/?3" alt="" className="h-80 bg-gray-500 aspect-video" />
+			<div className="flex flex-col justify-center flex-1 p-6 bg-gray-900">
+				<span className="text-xs uppercase text-gray-400">Join, it's free</span>
+				<h3 className="text-3xl font-bold">We're not reinventing the wheel</h3>
+				<p className="my-6 text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aliquam possimus quas, error esse quos.</p>
+				<button type="button" className="self-start">Action</button>
+			</div>
+		</div>
+	</div>
+</section>
   </div>
   )
 }
