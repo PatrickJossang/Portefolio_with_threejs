@@ -1,6 +1,5 @@
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-// if all goes wrong it backs up to this 
-//TODO create a backup sulution function 
+
 export function loadGLTFModel(
   scene,
   glbPath,
@@ -12,9 +11,9 @@ export function loadGLTFModel(
 
     loader.load(
       glbPath,
-      gltf => {
+      (gltf) => {
         const obj = gltf.scene
-        obj.name = 'dog'
+        obj.name = 'model'
         obj.position.y = 0
         obj.position.x = 0
         obj.receiveShadow = receiveShadow
@@ -30,7 +29,7 @@ export function loadGLTFModel(
         resolve(obj)
       },
       undefined,
-      function (error) {
+      (error) => {
         reject(error)
       }
     )

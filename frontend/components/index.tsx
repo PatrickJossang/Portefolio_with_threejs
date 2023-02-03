@@ -4,18 +4,17 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { loadGLTFModel } from '../lib/model';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { BodyModel, Container, Footer, Header } from './styles';
 
 // giving varibals new values
-const ThreePc: React.FC = () => {
+const THREEjs: React.FC = () => {
   const refBody = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [renderer, setRenderer] = useState<any>();
   const [_camera, setCamera] = useState<any>();
-  const [target] = useState(new THREE.Vector3(-0.5, 1.2, 0));
-  const [initialCameraPosition] = useState(
-    new THREE.Vector3(20 * Math.sin(0.2 * Math.PI), 10, 20 * Math.cos(0.2 * Math.PI)),
-  );
+  const [target] = useState(new THREE.Vector3(0, 0, 0));
+  const [initialCameraPosition] = useState(new THREE.Vector3(0, 0, 0));
   const [scene] = useState(new THREE.Scene());
   const [_controls, setControls] = useState<any>();
 
@@ -55,7 +54,7 @@ const ThreePc: React.FC = () => {
       //where camera is located to the model and model size 
       //TODO fix camera location after view is changed to perspectiv 
       const scale = scH * 0.0001 + 3;
-      const camera = new THREE.OrthographicCamera( scale / - 2, scale / 2, scale / 2, scale / - 2, 1, 1000 );
+      const camera = new THREE.OrthographicCamera(scale / -2, scale / 2, scale / 2, scale / -2, 1, 1000);
       camera.position.copy(initialCameraPosition);
       camera.lookAt(target);
       setCamera(camera);
@@ -65,8 +64,8 @@ const ThreePc: React.FC = () => {
       const directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
       scene.add( directionalLight );
       //yellow amber light 
-      const directionalsLight = new THREE.DirectionalLight( 0xfebe00, 0.2 );
-      scene.add( directionalsLight );
+      // const directionalsLight = new THREE.DirectionalLight( 0xfebe00, 0.2 );
+      // scene.add( directionalsLight );
       //What kind of controls i have inn the web 
       //TODO Change camera view to perspektiv after model is done 
       const controls = new OrbitControls(camera, renderer.domElement);
@@ -75,15 +74,21 @@ const ThreePc: React.FC = () => {
       setControls(controls);
 
       //My model loader
-      //TODO When publish to web applicasjon change path 
-      loadGLTFModel(scene, 'https://github.com/PatrickJossang/Portefolio_with_threejs/blob/main/frontend/public/model/sushi_table.gltf', {
+      loadGLTFModel(scene, '/Sushi.glb', {
         receiveShadow: true,
         castShadow: true,
-      }).then(() => {
-        animate();
-        //DO NOT SETT TO TRUE !!!!!
-        setLoading(false);
-      });
+      })
+        .then(() => {
+          animate();
+        })
+        .catch((error) => {
+          console.error(error);
+          alert(`An error occurred while loading the model: ${error}`);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+  
       //to make turnin look natrual
       let req: any = null;
       let frame = 0;
@@ -123,18 +128,12 @@ const ThreePc: React.FC = () => {
 
   //Make it visual in web 
   return (
-    <Container>
-      <Header>
-        <h1>
-
-        </h1>
-      </Header>
+  <>
+  <Container>
       <BodyModel ref={refBody}>{loading && <p>loading...</p>}</BodyModel>
-      <Footer>
-
-      </Footer>
-    </Container>
+  </Container>
+  </>  
   );
 };
 
-export default ThreePc;
+export default THREEjs;

@@ -10,6 +10,8 @@ const Container = styled.div`
   text-align: center;
   background-image: url('./bg.jpg');
   background-position: center;
+  background-color: pink;
+
 `;
 
 const Header = styled.div`
@@ -38,7 +40,7 @@ const BodyModel = styled.div`
   height: 100%;
   width: 100%;
   cursor: pointer;
-  background-color: transparent;
+  background-color: pink;
 `;
 
 const Footer = styled.div`
