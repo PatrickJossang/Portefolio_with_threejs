@@ -12,14 +12,14 @@ function NavBar() {
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl px-4 md:px-6 py-2.5">
             <h1 href="https://flowbite.com" className="flex items-center">
 
-              <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+              <span className="self-center text-xl font-semibold whitespace-nowrap text-white dark:text-white">
                 Portefolio
               </span>
             </h1>
             <div className="flex items-center">
               <p
                 href="tel:45407589"
-                className="mr-6 text-sm font-medium text-gray-500 dark:text-white hover:underline"
+                className="mr-6 text-sm font-medium text-white dark:text-white hover:underline"
               >
                 +47 454 07 589
               </p>
@@ -33,7 +33,7 @@ function NavBar() {
                 <li>
                   <Link
                     href="/"
-                    className="text-gray-900 dark:text-white hover:underline"
+                    className="text-white dark:text-white hover:underline"
                   >
                     Hjem
                   </Link>
@@ -41,7 +41,7 @@ function NavBar() {
                 <li>
                   <Link
                     href="/about"
-                    className="text-gray-900 dark:text-white hover:underline"
+                    className="text-white dark:text-white hover:underline"
                   >
                     Om meg
                   </Link>
@@ -57,7 +57,7 @@ function NavBar() {
                 <li>
                   <Link
                     href="Projects"
-                    className="text-gray-900 dark:text-white hover:underline"
+                    className="text-white dark:text-white hover:underline"
                   >
                     Prosjekter
                   </Link>
